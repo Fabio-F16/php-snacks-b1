@@ -31,6 +31,38 @@
             'hostScore' => '77',
         ]
     ];   
+    $class = [
+        [
+        'nome' => 'Alberto',
+        'cognome' => 'Scaramuzza',
+        'voti' => [
+            6,
+            6,
+            6,
+            10
+            ]
+        ],
+        [
+        'nome' => 'Giovanni',
+        'cognome' => 'Pezzali',
+        'voti' => [
+            6,
+            8,
+            6,
+            10
+            ]
+        ],
+        [
+        'nome' => 'Flavio',
+        'cognome' => 'Insinna',
+        'voti' => [
+            7,
+            8,
+            7,
+            8
+            ]
+        ]
+        ];
 ?>
 
 <!DOCTYPE html>
@@ -126,40 +158,8 @@ Creare un array contenente qualche alunno di un’ipotetica classe.
 Ogni alunno avrà Nome, Cognome e un array contenente i suoi voti scolastici. 
 Stampare Nome, Cognome e la media dei voti di ogni alunno. -->
         <div class="col-12">
-        <h2>Snack Bonus</h2>
+            <h2>Snack Bonus</h2>
             <?php
-            $class = [
-                    [
-                    'nome' => 'Alberto',
-                    'cognome' => 'Scaramuzza',
-                    'voti' => [
-                        6,
-                        6,
-                        6,
-                        10
-                        ]
-                    ],
-                    [
-                    'nome' => 'Giovanni',
-                    'cognome' => 'Pezzali',
-                    'voti' => [
-                        6,
-                        8,
-                        6,
-                        10
-                        ]
-                    ],
-                    [
-                    'nome' => 'Flavio',
-                    'cognome' => 'Insinna',
-                    'voti' => [
-                        7,
-                        8,
-                        7,
-                        8
-                        ]
-                    ]
-                    ];
             for ($i = 0; $i < count($class); $i++) {
                 // echo $class[$i]['nome'];
                 // echo $class[$i]['cognome'];
@@ -169,15 +169,14 @@ Stampare Nome, Cognome e la media dei voti di ogni alunno. -->
                 };
                 // echo('media voti è ' . round($media / count($class[$i]['voti'])));
                 echo ('<p>' . $class[$i]['nome'] . ' ' . $class[$i]['cognome'] . ' ' . '</p>');
-                echo ('<p>' . 'Media voti:' . ' ' . round($sum / count($class[$i]['voti']) . '</p>'));
+                echo ('<p>' . 'Media voti:' . ' ' . ($sum / count($class[$i]['voti']) . '</p>'));
             }
             ?>
-            
         </div>
     </div>
-
-
 </body>
+
+<!-- STYLE -->
 <style>
     .container{
         flex-wrap: wrap;
