@@ -44,8 +44,8 @@ Olimpia Milano - Cantù | 55-60 -->
      
 ?>
 
-<h2>Match Day</h2>
-<h4>Snack 1</h4>
+
+<h2>Snack 1</h2>
 
 <?php    for ($i = 0; $i < count($mathDay); $i++){
 
@@ -62,8 +62,8 @@ che name sia più lungo di 3 caratteri,
 che mail contenga un punto e una chiocciola 
 e che age sia un numero. 
 Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” -->
-<h2>Access</h2>
-<h4>Snack 2</h4>
+<h2>Snack 2</h2>
+
 <?php    
 
 if(isset($_GET["name"]) && isset($_GET["mail"]) && isset($_GET["age"])){
@@ -75,6 +75,25 @@ if(isset($_GET["name"]) && isset($_GET["mail"]) && isset($_GET["age"])){
         }else{
             echo ('<p>' . 'accesso negato' . '</p>');
         }
+}else{
+    echo ('<p>' . 'inserire credenziali' . '</p>' );
 }
 
 ?> 
+
+<!-- Snack 3
+Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta -->
+<h2>Snack 3</h2>
+<?php
+
+$numbers = [];
+
+while (count($numbers) <  15){
+    $randomNumber = rand(1, 100);
+        if(!in_array($randomNumber, $numbers )){
+            $numbers[] = $randomNumber;
+            // echo $randomNumber . ' ';
+            echo ('<p>' .  $randomNumber . '</p>');
+            }
+        }
+?>
