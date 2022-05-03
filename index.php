@@ -115,13 +115,67 @@ Prendere il paragrafo e suddividerlo in tanti paragrafi. Ogni punto un nuovo par
             $paragraph = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
 
             $moreParagraph = explode("." , $paragraph);
-            // var_dump($moreParagraph);
+            //  var_dump($paragraph);
             for ($i = 0; $i < count($moreParagraph); $i++){
                 echo('<p>' . $moreParagraph[$i] . '</p>');
             }
             ?>
         </div>
+<!-- Snack Bonus
+Creare un array contenente qualche alunno di un’ipotetica classe. 
+Ogni alunno avrà Nome, Cognome e un array contenente i suoi voti scolastici. 
+Stampare Nome, Cognome e la media dei voti di ogni alunno. -->
+        <div class="col-12">
+        <h2>Snack Bonus</h2>
+            <?php
+            $class = [
+                    [
+                    'nome' => 'Alberto',
+                    'cognome' => 'Scaramuzza',
+                    'voti' => [
+                        6,
+                        6,
+                        6,
+                        10
+                        ]
+                    ],
+                    [
+                    'nome' => 'Giovanni',
+                    'cognome' => 'Pezzali',
+                    'voti' => [
+                        6,
+                        8,
+                        6,
+                        10
+                        ]
+                    ],
+                    [
+                    'nome' => 'Flavio',
+                    'cognome' => 'Insinna',
+                    'voti' => [
+                        7,
+                        8,
+                        7,
+                        8
+                        ]
+                    ]
+                    ];
+            for ($i = 0; $i < count($class); $i++) {
+                // echo $class[$i]['nome'];
+                // echo $class[$i]['cognome'];
+                $sum = 0;
+                for ($j = 0; $j < count($class[$i]['voti']); $j++){
+                    $sum += $class[$i]['voti'][$j];
+                };
+                // echo('media voti è ' . round($media / count($class[$i]['voti'])));
+                echo ('<p>' . $class[$i]['nome'] . ' ' . $class[$i]['cognome'] . ' ' . '</p>');
+                echo ('<p>' . 'Media voti:' . ' ' . round($sum / count($class[$i]['voti']) . '</p>'));
+            }
+            ?>
+            
+        </div>
     </div>
+
 
 </body>
 <style>
